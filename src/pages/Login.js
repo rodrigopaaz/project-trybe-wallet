@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addUser } from '../redux/actions';
+import { addUser, thunkCurrency } from '../redux/actions';
 
 class Login extends React.Component {
   constructor() {
@@ -10,6 +10,11 @@ class Login extends React.Component {
       email: '',
       password: '',
     };
+  }
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(thunkCurrency('all'));
   }
 
   handleChange = ({ target }) => {
