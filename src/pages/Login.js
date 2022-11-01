@@ -14,7 +14,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(thunkCurrency('all'));
+    dispatch(thunkCurrency());
   }
 
   handleChange = ({ target }) => {
