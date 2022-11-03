@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeExpense, editExpense } from '../redux/actions';
 
 class Table extends Component {
   render() {
-    const { wallet } = this.props;
+    const { wallet, dispatch } = this.props;
     const { expenses } = wallet;
 
-    console.log(wallet);
     return (
       <div>
-        <table>
+        <table className="tableCosts">
           <thead>
             <tr>
               <th>Descrição</th>
@@ -26,7 +26,7 @@ class Table extends Component {
           </thead>
           <tbody>
             { expenses.map((element, index) => (
-              <tr key={ index }>
+              <tr key={ element.description }>
                 <td>{element.description}</td>
                 <td>{element.tag}</td>
                 <td>{element.method}</td>
@@ -45,10 +45,18 @@ class Table extends Component {
                 <td>Real</td>
                 <td>
                   <button
+                    data-testid="edit-btn"
                     type="button"
-                    onClick={ () => {} }
+                    onClick={ () => { dispatch(editExpense(index, element, true)); } }
                   >
-                    Editar/Excluir
+                    Editar
+                  </button>
+                  <button
+                    data-testid="delete-btn"
+                    type="button"
+                    onClick={ () => { dispatch(removeExpense(index, element)); } }
+                  >
+                    Excluir
                   </button>
 
                 </td>

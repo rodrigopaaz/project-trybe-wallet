@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { thunkCurrency } from '../redux/actions';
+import { editExpense, thunkCurrency } from '../redux/actions';
 
 class WalletForm extends Component {
   constructor() {
@@ -26,7 +26,7 @@ class WalletForm extends Component {
   render() {
     const { data, dispatch } = this.props;
     const { wallet } = data;
-    const { currencies } = wallet;
+    const { currencies, editMode, items, position } = wallet;
     const { currency, value, description } = this.state;
     return (
       <div>
@@ -72,16 +72,31 @@ class WalletForm extends Component {
           <option>Saúde</option>
         </select>
         ;
-        <button
-          type="button"
-          /*   onClick={ () => dispatch(addExpenses(this.state, wallet)) } */
-          onClick={ () => {
-            this.setState({ value: '', description: '' });
-            dispatch(thunkCurrency(this.state, wallet, value, currency));
-          } }
-        >
-          Adicionar despesa
-        </button>
+        { !editMode
+          ? (
+            <button
+              type="button"
+              /*   onClick={ () => dispatch(addExpenses(this.state, wallet)) } */
+              onClick={ () => {
+                this.setState({ value: '', description: '' });
+                dispatch(thunkCurrency(this.state, wallet, value, currency));
+              } }
+            >
+              Adicionar despesa
+            </button>
+          )
+          : (
+            <button
+              type="button"
+              /*   onClick={ () => dispatch(addExpenses(this.state, wallet)) } */
+              onClick={ () => {
+                this.setState({ value: '', description: '' });
+                dispatch(editExpense(position, items, false, this.state));
+              } }
+            >
+              Editar despesa
+            </button>
+          )}
       </div>
     );
   }

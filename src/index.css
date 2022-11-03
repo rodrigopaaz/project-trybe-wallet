@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tableCosts {
+  width: 100%;
+  overflow-wrap: break-word;
+}

@@ -6,6 +6,10 @@ export const ADD_WALLET = 'ADD_WALLET';
 
 export const ADD_EXPENSES = 'ADD_EXPENSES';
 
+export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
+
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+
 export const addUser = (user) => ({ type: ADD_USER, user });
 
 export const addWallet = (wallet) => ({ type: ADD_WALLET, wallet });
@@ -28,6 +32,23 @@ export const addExpenses = (expenses, wallet, valor, singleCurrency) => ({
   expenses,
   valor,
   singleCurrency,
+});
+
+export const removeExpense = (position, element) => ({
+  type: REMOVE_EXPENSE,
+  position,
+  value: (element.value * [element.exchangeRates[element.currency].ask])
+    .toFixed(2),
+});
+
+export const editExpense = (position, element, editMode, updatedItems) => ({
+  type: EDIT_EXPENSE,
+  position,
+  element,
+  value: (element.value * [element.exchangeRates[element.currency].ask])
+    .toFixed(2),
+  editMode,
+  updatedItems,
 });
 
 export const thunkCurrency = (
