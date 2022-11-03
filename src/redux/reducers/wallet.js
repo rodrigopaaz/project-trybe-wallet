@@ -28,7 +28,6 @@ const editStateAction = (state, action) => {
 };
 
 const editedTotal = (action, state) => {
-  console.log(action);
   if (!action.editMode && action.updatedItems) {
     return (
       (Number(state.total) - Number(action.value)
