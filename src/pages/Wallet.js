@@ -7,11 +7,12 @@ class Wallet extends React.Component {
   render() {
     return (
       (
-        <div>
+        <div className="main__wallet">
           <Header />
-          <WalletForm />
-          <Table />
-          TrybeWallet
+          <div className="div__table">
+            <WalletForm />
+            <Table />
+          </div>
         </div>
       )
     );

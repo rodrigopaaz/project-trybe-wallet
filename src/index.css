@@ -1,12 +1,398 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing:
     antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('img/background.png');
+  background-color: #0bb35c;
+  background-size: cover;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 400;
+
 }
+
+#root {
+  height: 100vh;
+  width: 100%;
+}
+
+input:focus {
+  outline: none !important;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__login {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__wallet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.div__login {
+  display: flex;
+  flex-direction: column;
+  width: 525px;
+  height: 356px;
+  left: 377px;
+  top: 201px;
+  justify-content: center;
+  align-items: center;
+
+  background: #FFFFFF;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  border-radius: 10px;
+}
+
+.div__title,
+.div__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+}
+
+.div__title {
+  justify-content: center;
+}
+
+.login__title {
+  width: 268px;
+  height: 56px;
+  margin-bottom: 10px;
+}
+
+.main__login input {
+  width: 320px;
+  height: 40px;
+  left: 475px;
+  top: 360px;
+
+  color: #003BE5;
+  background: #FFFFFF;
+  border: 1px solid #003BE5;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+
+}
+
+.main__login input::placeholder {
+  color: #003BE5;
+}
+
+.main__login button {
+  width: 335px;
+  height: 40px;
+  transition-duration: 0.6s;
+  color: white;
+  border: 1px solid #003BE5;
+  border-radius: 5px;
+}
+
+.div__header {
+  width: 1037px;
+  height: 134px;
+  left: 121px;
+  top: -97px;
+
+  background: #FFFFFF;
+  box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+}
+
+.img__moedas {
+  width: 20px;
+  margin: 0 7px 0 5px;
+}
+
+.img__wallet {
+  width: 250.19px;
+  height: 52.29px;
+}
+
+.header__email {
+  color: #2FC18C;
+  font-weight: 700;
+}
+
+.icon__email {
+  color: #2FC18C;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.div__header div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 134px;
+}
+
+.total__bold {
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 2px;
+}
+
+.total__expenses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 233px;
+  height: 14px;
+  left: 592px;
+  top: 88px;
+
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #003BE5;
+}
+
+.div__wallet {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1037px;
+  height: 134px;
+
+  background: rgba(225, 229, 235, 1);
+  border-radius: 0px;
+}
+
+.div__wallet__inputs,
+.label__top,
+.label__botton {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-around;
+  color: #003BE5;
+
+}
+
+.div__wallet__inputs {
+  height: 100px;
+}
+
+.div__wallet__inputs input {
+  width: 288.86px;
+  height: 30px;
+  left: 403.14px;
+  top: 179px;
+  border: 1px solid #003BE5;
+  border-radius: 5px;
+  color: #003BE5;
+  padding-left: 7px;
+}
+
+.div__wallet__inputs select {
+  width: 155px;
+  height: 30px;
+  left: 897px;
+  top: 179px;
+
+  border: 1px solid #003BE5;
+  border-radius: 5px;
+  color: #003BE5;
+}
+
+.label__top,
+.label__botton {
+  display: flex;
+  align-items: center;
+  width: 277px;
+  left: 463px;
+  top: 243px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.label__top:first-child {
+  flex-basis: 60%;
+}
+
+.label__top input {
+  width: 60%;
+}
+
+
+.label__top:nth-child(2) {
+  flex-basis: 40%;
+}
+
+.label__botton:nth-child(3) {
+  flex-basis: 20%;
+}
+
+.label__botton:nth-child(4) {
+  flex-basis: 60%;
+}
+
+.label__botton:nth-child(5) {
+  flex-basis: 20%;
+}
+
+.label__botton:nth-child(5) select {
+  width: 60%;
+}
+
+.label__botton:nth-child(4) select {
+  width: 60%;
+}
+
+.label__botton:nth-child(3) input {
+  width: 52%;
+}
+
+.div__table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1155px;
+
+  background: #003BE5;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  border-radius: 10px;
+}
+
+.div__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1037px;
+  height: 67px;
+  background: #FFFFFF;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px
+}
+
+.div__button button {
+  width: 330px;
+  height: 40px;
+  left: 475px;
+  top: 318px;
+
+  background: #2FC18C;
+  border: 1px solid #2FC18C;
+  border-radius: 5px;
+
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+
+  color: #FFFFFF;
+
+}
+
+th {
+  border-right: 1px solid white;
+  color: #FFFFFF;
+  Width: 110.93px;
+  Height: 26.6px;
+  padding: 5px;
+
+}
+
+.div__table th:nth-last-child(1) {
+  border: none;
+}
+
+tr {
+  text-align: center;
+
+}
+
+td {
+  color: #2FC18C;
+  padding: 5px;
+
+}
+
+thead .tableCosts {
+  display: flex;
+  align-items: space-evenly;
+  width: 1040px;
+  height: 129px;
+  left: 122px;
+  top: 421px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 5px;
+
+}
+
+table tbody tr,
+td {
+  margin-top: 2px;
+  border-bottom: 1px solid white;
+}
+
+.tableCosts {
+  margin: 30px 0 20px 0;
+  border: 1px;
+}
+
+.div__table__button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1037px;
+  min-height: 150px;
+  font-size: 10px;
+}
+
+.button__add,
+.button__delete {
+  color: #003BE5;
+  Width: 10px;
+  Height: 14px;
+  margin: 5px;
+}
+
+.div__insert__expense {
+  display: flex;
+  min-height: 150px;
+  align-items: center;
+}
+
+.no__expense__message {
+  color: #FFFFFF;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
