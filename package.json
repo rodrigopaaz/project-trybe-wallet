@@ -20,7 +20,10 @@
     "redux-thunk": "2.4.1",
     "stylelint-order": "5.0.0"
   },
+  "homepage": "https://rodrigopaaz.github.io/project-trybe-wallet",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "cy": "env CY_CLI=true cypress run",
     "cy:open": "cypress open --e2e --browser chrome",
     "start": "env ESLINT_NO_DEV_ERRORS=true react-scripts start",
