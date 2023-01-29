@@ -10,6 +10,11 @@ class App extends Component {
         <Switch>
           <Route
             exact
+            path="/project-trybe-wallet"
+            component={ Login }
+          />
+          <Route
+            exact
             path="/"
             component={ Login }
           />
